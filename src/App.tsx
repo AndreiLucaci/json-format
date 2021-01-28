@@ -54,7 +54,7 @@ const App: FC = () => {
         style={{
           position: "relative",
           top: "7vh",
-          height: "90vh",
+          height: "78vh",
           width: "100wh",
         }}
       >
@@ -72,9 +72,10 @@ const App: FC = () => {
           position: "fixed",
           zIndex: 1,
           width: "100vw",
-          bottom: "1px",
+          bottom: "0px",
+          marginBottom: "5px",
           textAlign: "center",
-          height: "3vh",
+          height: "15vh",
           backgroundColor: "#272821",
         }}
       >

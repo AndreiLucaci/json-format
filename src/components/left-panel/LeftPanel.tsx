@@ -19,11 +19,12 @@ export const LeftPannel: FC<LeftPanelProps> = (props: LeftPanelProps) => {
       <MonacoEditor
         width="100%"
         height="100%"
-        language="JSON"
+        language="json"
         options={{
           minimap: {
             enabled: true,
           },
+          language: "json",
           wordWrap: "on",
         }}
         theme="night-dark"
