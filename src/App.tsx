@@ -75,7 +75,7 @@ const App: FC = () => {
           bottom: "0px",
           marginBottom: "5px",
           textAlign: "center",
-          height: "15vh",
+          height: "3vh",
           backgroundColor: "#272821",
         }}
       >
