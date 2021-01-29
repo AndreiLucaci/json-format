@@ -1,11 +1,10 @@
-import React, { FC, useState } from "react";
 import { Layout } from "antd";
-import "antd/dist/antd.css";
-
-import { EditorPage } from "./pages";
-import { Header, Footer } from "./sections";
+import "../node_modules/antd/dist/antd.css";
+import React, { FC, useState } from "react";
 
 import "./App.css";
+import { EditorPage } from "./pages";
+import { Footer, Header } from "./sections";
 
 const App: FC = () => {
   const [activePage] = useState(<EditorPage />);

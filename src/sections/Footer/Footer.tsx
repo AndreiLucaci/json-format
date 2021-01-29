@@ -1,5 +1,5 @@
-import React, { FC } from "react";
 import { Layout, Typography } from "antd";
+import React, { FC } from "react";
 
 const { Footer: FooterComponent } = Layout;
 const { Text, Link } = Typography;
@@ -33,9 +33,9 @@ export const Footer: FC = () => {
         <Link
           style={{ color: "#a9dc76" }}
           title="github"
-          href="https://github.com/andreilucaci"
+          href="https://github.com/AndreiLucaci/json-format"
         >
-          https://github.com/andreilucaci
+          https://github.com/AndreiLucaci/json-format
         </Link>{" "}
         <Text style={{ color: "#eff2e2" }}>-</Text>{" "}
         <Text style={{ color: "#78dde8" }}>JSON</Text>{" "}

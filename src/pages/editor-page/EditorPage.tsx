@@ -1,7 +1,6 @@
-import React, { useState, FC } from "react";
-import { Layout, Row, Col } from "antd";
-import "antd/dist/antd.css";
-
+import { Col, Layout, Row } from "antd";
+import "../../../node_modules/antd/dist/antd.css";
+import React, { FC, useState } from "react";
 import { LeftPannel, RightPanel } from "../../components";
 import { IJsonFormatterEngine, JsonFormatterEngine } from "../../engine";
 

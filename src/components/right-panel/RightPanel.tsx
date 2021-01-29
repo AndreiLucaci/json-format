@@ -1,18 +1,32 @@
-import { Layout, Button, Row, Col, Slider, InputNumber } from "antd";
-import React, { FC, useState } from "react";
-import { RightPanelProps } from "../../types";
-import { CopyOutlined, SmallDashOutlined } from "@ant-design/icons";
-
-import { notificationService } from "../../services";
-import { DEFAULT_OPTIONS } from "../../constants";
-
-import MonacoEditor from "react-monaco-editor";
-import "../components.css";
+import { CopyOutlined } from "@ant-design/icons";
+import {
+  Button,
+  Col,
+  InputNumber,
+  Layout,
+  Row,
+  Slider,
+  Typography,
+} from "antd";
 import * as monacoEditor from "monaco-editor/esm/vs/editor/editor.api";
+import React, { FC, useEffect, useState } from "react";
+import MonacoEditor from "react-monaco-editor";
+import { DEFAULT_OPTIONS } from "../../constants";
+import { notificationService } from "../../services";
+import { RightPanelProps } from "../../types";
+import { MONOKAI } from "../../types/editor.types";
+import "../components.css";
+import "../../styles/monokai.scss";
+import "./RightPanel.scss";
 
 const { Content } = Layout;
+const { Title } = Typography;
 
 export const RightPanel: FC<RightPanelProps> = (props: RightPanelProps) => {
+  useEffect(() => {
+    monacoEditor.editor.defineTheme("monokai", MONOKAI);
+  }, []);
+
   const [
     editor,
     setEditor,
@@ -24,7 +38,7 @@ export const RightPanel: FC<RightPanelProps> = (props: RightPanelProps) => {
     notificationService.open({
       message: "Copy / paste completed.",
       description: "Code pasted to clipboard succesfully",
-      icon: <SmallDashOutlined />,
+      icon: <CopyOutlined />,
     });
   };
 
@@ -59,6 +73,14 @@ export const RightPanel: FC<RightPanelProps> = (props: RightPanelProps) => {
     }
   };
 
+  const editorMount = (editor: monacoEditor.editor.IStandaloneCodeEditor) => {
+    try {
+      setEditor(editor);
+    } catch (err) {
+      notificationService.error(err.message);
+    }
+  };
+
   return (
     <Content
       style={{
@@ -69,13 +91,19 @@ export const RightPanel: FC<RightPanelProps> = (props: RightPanelProps) => {
     >
       <Content>
         <Row style={{ padding: "10px 0" }}>
-          <Col span={19}>
-            <Row style={{ paddingLeft: "0px" }}>
-              <Col span={12}>
+          <Col span={17}>
+            <Row className="indent-options">
+              <Col span={9}>
+                <Title level={5} className="mk indent-title">
+                  Indent spaces:
+                </Title>
+              </Col>
+              <Col span={9} style={{ marginTop: "-4px" }}>
                 <Slider
                   min={2}
                   max={8}
                   step={2}
+                  className="mk mk--blue"
                   onChange={(value: number) => {
                     onStepperChange(value);
                   }}
@@ -86,11 +114,12 @@ export const RightPanel: FC<RightPanelProps> = (props: RightPanelProps) => {
                   }
                 />
               </Col>
-              <Col span={4}>
+              <Col span={4} style={{ marginTop: "-4px" }}>
                 <InputNumber
                   min={2}
                   max={8}
-                  style={{ margin: "0 16px" }}
+                  className="mk mk--blue mk--bg indent-border"
+                  style={{ margin: "0 15px", width: "55px" }}
                   value={spaceSize}
                   step={2}
                   onChange={(value) => {
@@ -100,9 +129,9 @@ export const RightPanel: FC<RightPanelProps> = (props: RightPanelProps) => {
               </Col>
             </Row>
           </Col>
-          <Col span={5}>
+          <Col span={7}>
             <Button
-              className="code-btn"
+              className="mk copy-btn"
               type="dashed"
               icon={<CopyOutlined />}
               size={"large"}
@@ -127,9 +156,10 @@ export const RightPanel: FC<RightPanelProps> = (props: RightPanelProps) => {
           renderFinalNewline: true,
           renderWhitespace: "all",
           wordWrap: "on",
+          theme: "monokai",
         }}
         value={props.inputText}
-        editorDidMount={(editor) => setEditor(editor)}
+        editorDidMount={(editor) => editorMount(editor)}
       ></MonacoEditor>
     </Content>
   );

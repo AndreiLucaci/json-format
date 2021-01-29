@@ -1,0 +1,17 @@
+@import "../../styles/monokai.scss";
+
+.info-title {
+  color: $mk-white !important;
+
+  padding-left: 40px;
+  padding-top: 7px;
+  margin: 0 10px;
+  height: 40px;
+  border: 1px dashed;
+  border-color: $mk-white;
+
+  &:hover {
+    background-color: $mk-bg-light;
+    cursor: pointer;
+  }
+}

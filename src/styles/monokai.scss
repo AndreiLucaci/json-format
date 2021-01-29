@@ -1,0 +1,47 @@
+$mk-bg-dark: #1c1d18;
+$mk-bg: #272821;
+$mk-bg-light: #3b3c34;
+$mk-green: #a9dc76;
+$mk-blue: #78dde8;
+$mk-white: #eff2e2;
+$mk-red: #ff6189;
+
+.mk {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
+
+  &--bg {
+    @extend .mk;
+    background-color: $mk-bg;
+
+    &--light {
+      @extend .mk--bg;
+      background-color: $mk-bg-light;
+    }
+
+    &--dark {
+      @extend .mk--bg;
+      background-color: $mk-bg-dark;
+    }
+  }
+
+  &--green {
+    @extend .mk;
+    color: $mk-green;
+  }
+
+  &--blue {
+    @extend .mk;
+    color: $mk-blue;
+  }
+
+  &--white {
+    @extend .mk;
+    color: $mk-white;
+  }
+
+  &--red {
+    @extend .mk;
+    color: $mk-red;
+  }
+}

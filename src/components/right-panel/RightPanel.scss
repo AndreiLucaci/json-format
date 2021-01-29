@@ -1,0 +1,48 @@
+@import "../../styles/monokai.scss";
+
+.copy-btn {
+  color: $mk-green;
+  background-color: $mk-bg;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $mk-bg-light;
+    border-color: #eff2e2;
+    color: $mk-green;
+  }
+}
+
+.indent-border {
+  border-color: $mk-bg-light;
+}
+
+.ant-slider-rail {
+  background-color: $mk-bg-light;
+}
+
+.ant-slider-handle {
+  background-color: $mk-white;
+}
+
+.indent-title {
+  color: $mk-white !important;
+}
+
+.indent-options {
+  padding-left: 40px;
+  padding-top: 7px;
+  margin: 0 10px;
+  height: 40px;
+  border: 1px dashed;
+  border-color: $mk-white;
+
+  &:hover {
+    background-color: $mk-bg-light;
+    cursor: pointer;
+  }
+}
+
+.ant-btn-dashe {
+  border-color: $mk-white;
+}
