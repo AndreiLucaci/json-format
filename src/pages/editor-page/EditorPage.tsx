@@ -1,24 +1,36 @@
-import { Col, Layout, Row } from "antd";
+import { Col, Row } from "antd";
 import "../../../node_modules/antd/dist/antd.css";
 import React, { FC, useState } from "react";
 import { LeftPannel, RightPanel } from "../../components";
 import { IJsonFormatterEngine, JsonFormatterEngine } from "../../engine";
-
-const { Content } = Layout;
+import { notificationService } from "../../services";
+import { JsonFormatterOptions } from "../../types";
+import { DEFAULT_OPTIONS } from "../../constants";
 
 export const EditorPage: FC = () => {
   const engine: IJsonFormatterEngine = new JsonFormatterEngine();
   const [inputText, setInputText] = useState("");
+  const [indentSize, setIndentSize] = useState(DEFAULT_OPTIONS);
 
-  const onInputChange = (val: string) => {
+  const onInputChange = (val: string, options?: JsonFormatterOptions) => {
     let formatterValue = "";
     try {
-      formatterValue = engine.format(val);
+      const formatOptions = options ?? indentSize;
+      formatterValue = engine.format(val, formatOptions);
     } catch (err) {
       formatterValue = err.message;
     }
 
     setInputText(formatterValue);
+  };
+
+  const onIndentSizeChange = (options: JsonFormatterOptions) => {
+    try {
+      setIndentSize(options);
+      onInputChange(inputText, options);
+    } catch (err) {
+      notificationService.error(err.message);
+    }
   };
 
   return (
@@ -27,7 +39,10 @@ export const EditorPage: FC = () => {
         <LeftPannel onChange={onInputChange}></LeftPannel>
       </Col>
       <Col span={12}>
-        <RightPanel inputText={inputText}></RightPanel>
+        <RightPanel
+          onIndentSizeChange={onIndentSizeChange}
+          inputText={inputText}
+        ></RightPanel>
       </Col>
     </Row>
   );

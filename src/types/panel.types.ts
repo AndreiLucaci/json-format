@@ -6,5 +6,5 @@ export type LeftPanelProps = {
 
 export type RightPanelProps = {
   inputText?: string;
-  onSpacesSizeChange?: (value: JsonFormatterOptions) => void;
+  onIndentSizeChange?: (value: JsonFormatterOptions) => void;
 };

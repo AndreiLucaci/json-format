@@ -66,8 +66,8 @@ export const RightPanel: FC<RightPanelProps> = (props: RightPanelProps) => {
     if (typeof value === "number") {
       setSpaceSize(value);
 
-      if (props.onSpacesSizeChange) {
-        props.onSpacesSizeChange({ spaces: value });
+      if (props.onIndentSizeChange) {
+        props.onIndentSizeChange({ spaces: value });
       }
     }
   };
