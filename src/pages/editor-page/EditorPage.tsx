@@ -22,23 +22,14 @@ export const EditorPage: FC = () => {
   };
 
   return (
-    <Content
-      style={{
-        position: "relative",
-        top: "7vh",
-        height: "90vh",
-        width: "100wh",
-      }}
-    >
-      <Row style={{ height: "100%" }}>
-        <Col span={12}>
-          <LeftPannel onChange={onInputChange}></LeftPannel>
-        </Col>
-        <Col span={12}>
-          <RightPanel inputText={inputText}></RightPanel>
-        </Col>
-      </Row>
-    </Content>
+    <Row style={{ height: "100%" }}>
+      <Col span={12}>
+        <LeftPannel onChange={onInputChange}></LeftPannel>
+      </Col>
+      <Col span={12}>
+        <RightPanel inputText={inputText}></RightPanel>
+      </Col>
+    </Row>
   );
 };
 

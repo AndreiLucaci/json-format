@@ -1,0 +1,29 @@
+@import "./styles/variables.scss";
+
+.page {
+  position: relative;
+  top: 7vh;
+  height: 90vh;
+  width: 100wh;
+}
+
+@include media("<=phone") {
+  .page {
+    height: 81vh;
+    top: 16vh;
+  }
+}
+
+@include media(">=phone", "<tablet") {
+  .page {
+    height: 81vh;
+    top: 16vh;
+  }
+}
+
+@include media(">=tablet", "<=desktop") {
+  .page {
+    height: 85vh;
+    top: 12vh;
+  }
+}

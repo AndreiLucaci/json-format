@@ -1,4 +1,5 @@
 @import "../../styles/monokai.scss";
+@import "../../styles/variables.scss";
 
 .header {
   background-color: $mk-bg-dark;
@@ -10,5 +11,23 @@
   &:hover {
     background-color: $mk-bg-darkish;
     cursor: pointer;
+  }
+}
+
+@include media("<=phone") {
+  .header {
+    height: 16vh;
+  }
+}
+
+@include media(">=phone", "<tablet") {
+  .header {
+    height: 16vh;
+  }
+}
+
+@include media(">=tablet", "<=desktop") {
+  .header {
+    height: 12vh;
   }
 }
