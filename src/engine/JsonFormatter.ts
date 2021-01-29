@@ -1,8 +1,5 @@
+import { DEFAULT_OPTIONS } from "../constants";
 import { JsonFormatterOptions } from "../types/engine.types";
-
-const DEFAULT_OPTIONS: JsonFormatterOptions = {
-  spaces: 2,
-};
 
 export interface IJsonFormatterEngine {
   format(value: string, options?: JsonFormatterOptions): string;

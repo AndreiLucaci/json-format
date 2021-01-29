@@ -1,9 +1,10 @@
-import { Layout, Button, Row, Col } from "antd";
+import { Layout, Button, Row, Col, Slider, InputNumber } from "antd";
 import React, { FC, useState } from "react";
 import { RightPanelProps } from "../../types";
 import { CopyOutlined, SmallDashOutlined } from "@ant-design/icons";
 
 import { notificationService } from "../../services";
+import { DEFAULT_OPTIONS } from "../../constants";
 
 import MonacoEditor from "react-monaco-editor";
 import "../components.css";
@@ -16,6 +17,8 @@ export const RightPanel: FC<RightPanelProps> = (props: RightPanelProps) => {
     editor,
     setEditor,
   ] = useState<monacoEditor.editor.IStandaloneCodeEditor>();
+
+  const [spaceSize, setSpaceSize] = useState(DEFAULT_OPTIONS.spaces);
 
   const openConfirmationNotification = () => {
     notificationService.open({
@@ -46,6 +49,16 @@ export const RightPanel: FC<RightPanelProps> = (props: RightPanelProps) => {
     }
   };
 
+  const onStepperChange = (value: any) => {
+    if (typeof value === "number") {
+      setSpaceSize(value);
+
+      if (props.onSpacesSizeChange) {
+        props.onSpacesSizeChange({ spaces: value });
+      }
+    }
+  };
+
   return (
     <Content
       style={{
@@ -56,8 +69,38 @@ export const RightPanel: FC<RightPanelProps> = (props: RightPanelProps) => {
     >
       <Content>
         <Row style={{ padding: "10px 0" }}>
-          <Col span={16}></Col>
-          <Col span={8}>
+          <Col span={19}>
+            <Row style={{ paddingLeft: "0px" }}>
+              <Col span={12}>
+                <Slider
+                  min={2}
+                  max={8}
+                  step={2}
+                  onChange={(value: number) => {
+                    onStepperChange(value);
+                  }}
+                  value={
+                    typeof spaceSize === "number"
+                      ? spaceSize
+                      : DEFAULT_OPTIONS.spaces
+                  }
+                />
+              </Col>
+              <Col span={4}>
+                <InputNumber
+                  min={2}
+                  max={8}
+                  style={{ margin: "0 16px" }}
+                  value={spaceSize}
+                  step={2}
+                  onChange={(value) => {
+                    onStepperChange(value);
+                  }}
+                />
+              </Col>
+            </Row>
+          </Col>
+          <Col span={5}>
             <Button
               className="code-btn"
               type="dashed"
