@@ -15,7 +15,6 @@ import { DEFAULT_OPTIONS } from "../../constants";
 import { notificationService } from "../../services";
 import { RightPanelProps } from "../../types";
 import { MONOKAI } from "../../types/editor.types";
-import "../components.css";
 import "../../styles/monokai.scss";
 import "./RightPanel.scss";
 

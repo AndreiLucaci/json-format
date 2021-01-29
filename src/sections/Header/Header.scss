@@ -1,0 +1,14 @@
+@import "../../styles/monokai.scss";
+
+.header {
+  background-color: $mk-bg-dark;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 7vh;
+
+  &:hover {
+    background-color: $mk-bg-darkish;
+    cursor: pointer;
+  }
+}

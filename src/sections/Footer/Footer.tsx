@@ -1,23 +1,14 @@
 import { Layout, Typography } from "antd";
 import React, { FC } from "react";
+import "../../styles/monokai.scss";
+import "./Footer.scss";
 
 const { Footer: FooterComponent } = Layout;
 const { Text, Link } = Typography;
 
 export const Footer: FC = () => {
   return (
-    <FooterComponent
-      style={{
-        position: "fixed",
-        zIndex: 1,
-        width: "100vw",
-        bottom: "0px",
-        marginBottom: "5px",
-        textAlign: "center",
-        height: "3vh",
-        backgroundColor: "#272821",
-      }}
-    >
+    <FooterComponent className="footer">
       <Text
         style={{
           fontSize: "10px",

@@ -1,4 +1,5 @@
-$mk-bg-dark: #1c1d18;
+$mk-bg-dark: #0f0f0d;
+$mk-bg-darkish: #161613;
 $mk-bg: #272821;
 $mk-bg-light: #3b3c34;
 $mk-green: #a9dc76;
@@ -22,6 +23,11 @@ $mk-red: #ff6189;
     &--dark {
       @extend .mk--bg;
       background-color: $mk-bg-dark;
+    }
+
+    &--darkish {
+      @extend .mk--bg;
+      background-color: $mk-bg-darkish;
     }
   }
 

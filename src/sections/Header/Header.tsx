@@ -2,21 +2,14 @@ import { Layout, Typography } from "antd";
 import "../../../node_modules/antd/dist/antd.css";
 import React, { FC } from "react";
 import "../../styles/monokai.scss";
+import "./Header.scss";
 
 const { Header: HeaderComponent } = Layout;
 const { Text, Title } = Typography;
 
 export const Header: FC = () => {
   return (
-    <HeaderComponent
-      style={{
-        position: "fixed",
-        zIndex: 1,
-        width: "100%",
-        height: "7vh",
-      }}
-      className="mk--bg--dark"
-    >
+    <HeaderComponent className="header">
       <Title
         style={{
           marginTop: "10px",
