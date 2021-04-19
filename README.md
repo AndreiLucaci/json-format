@@ -1,5 +1,8 @@
 # json-format: "JSON formatter - simple prettifier for JSON"
 
+## Demo
+You can try it out here: [Demo - Click ME](https://andreilucaci.github.io/json-format/)
+
 Small json format utility interface.
 
 
@@ -8,5 +11,4 @@ Small json format utility interface.
 ![UI](https://i.imgur.com/URc1fOJ.png)
 
 
-## Demo
-You can try it out here: [Demo - Click ME](https://andreilucaci.github.io/json-format/)
+
