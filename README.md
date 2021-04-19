@@ -3,6 +3,7 @@
 ## Demo
 You can try it out here: [Demo - Click ME](https://andreilucaci.github.io/json-format/)
 
+## Description
 Small json format utility interface.
 
 
