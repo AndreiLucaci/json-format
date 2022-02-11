@@ -17,7 +17,7 @@
     "antd": "^4.11.2",
     "include-media": "^1.4.9",
     "monaco-editor-webpack-plugin": "^2.1.0",
-    "node-sass": "4.14.1",
+    "node-sass": "7.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-monaco-editor": "^0.41.2",
