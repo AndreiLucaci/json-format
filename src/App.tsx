@@ -4,7 +4,8 @@ import React, { FC, useState } from "react";
 
 import "./App.scss";
 import { EditorPage } from "./pages";
-import { Footer, Header } from "./sections";
+import Footer from "./sections/Footer/FooterComponent";
+import Header from "./sections/Header/HeaderComponent";
 
 const { Content } = Layout;
 

@@ -4,12 +4,12 @@ import React, { FC } from "react";
 import "../../styles/monokai.scss";
 import "./Header.scss";
 
-const { Header: HeaderComponent } = Layout;
+const { Header } = Layout;
 const { Text, Title } = Typography;
 
-export const Header: FC = () => {
+export const HeaderComponent: FC = () => {
   return (
-    <HeaderComponent className="header">
+    <Header className="header">
       <Title
         style={{
           marginTop: "10px",
@@ -23,8 +23,8 @@ export const Header: FC = () => {
         <Text className="mk mk--red">for </Text>
         <Text className="mk mk--blue">JSON</Text>
       </Title>
-    </HeaderComponent>
+    </Header>
   );
 };
 
-export default Header;
+export default HeaderComponent;

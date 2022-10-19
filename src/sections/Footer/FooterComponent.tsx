@@ -3,12 +3,12 @@ import React, { FC } from "react";
 import "../../styles/monokai.scss";
 import "./Footer.scss";
 
-const { Footer: FooterComponent } = Layout;
+const { Footer } = Layout;
 const { Text, Link } = Typography;
 
-export const Footer: FC = () => {
+export const FooterComponent: FC = () => {
   return (
-    <FooterComponent className="footer">
+    <Footer className="footer">
       <Text
         style={{
           fontSize: "10px",
@@ -26,13 +26,13 @@ export const Footer: FC = () => {
           Andrei Lucaci
         </Link>{" "}
         <Text style={{ color: "#ff6189" }}>
-          ©2021-${new Date().getFullYear()}
+          ©2021-{new Date().getFullYear()}
         </Text>{" "}
         <Text style={{ color: "#eff2e2" }}>-</Text>{" "}
         <Link
           style={{ color: "#a9dc76" }}
           title="jsonf"
-          href="https://jsonf.io"
+          href="https://jsonf.io/"
         >
           https://jsonf.io
         </Link>{" "}
@@ -41,8 +41,8 @@ export const Footer: FC = () => {
         <Text style={{ color: "#eff2e2" }}>Format</Text>{" "}
         <Text style={{ color: "#eff2e2" }}>{" }"}</Text>
       </Text>
-    </FooterComponent>
+    </Footer>
   );
 };
 
-export default Footer;
+export default FooterComponent;
