@@ -1,7 +1,7 @@
-# json-format: "JSON formatter - simple prettifier for JSON"
+# json-format: "JSON formatter - simple prettifier for JSON" - https://jsonf.io
 
 ## Demo
-You can try it out here: [Demo - Click ME](https://andreilucaci.github.io/json-format/)
+You can try it out here: [Demo - Click ME](https://jsonf.io/)
 
 ## Description
 Small json format utility interface.
